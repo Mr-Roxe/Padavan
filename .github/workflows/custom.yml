@@ -207,15 +207,15 @@ jobs:
             echo "CONFIG_FIRMWARE_INCLUDE_OC=y" >> .config
             echo "CONFIG_FIRMWARE_MT7621_OC=${{ inputs.mt7621_oc }}" >> .config
           fi
-          sed -i "s/CONFIG_FIRMWARE_INCLUDE_SFE=y/CONFIG_FIRMWARE_INCLUDE_SFE=n/g' .config
-          sed -i "s/CONFIG_FIRMWARE_INCLUDE_LPRD=y/CONFIG_FIRMWARE_INCLUDE_LPRD=n/g' .config
-          sed -i "s/CONFIG_FIRMWARE_INCLUDE_U2EC=y/CONFIG_FIRMWARE_INCLUDE_U2EC=n/g' .config
-          sed -i "s/CONFIG_FIRMWARE_INCLUDE_OPENVPN=y/CONFIG_FIRMWARE_INCLUDE_OPENVPN=n/g' .config
-          sed -i "s/CONFIG_FIRMWARE_INCLUDE_FFMPEG_NEW=y/CONFIG_FIRMWARE_INCLUDE_FFMPEG_NEW=n/g' .config
-          sed -i "s/CONFIG_FIRMWARE_INCLUDE_DOGCOM=y/CONFIG_FIRMWARE_INCLUDE_DOGCOM=n/g' .config
-          sed -i "s/CONFIG_FIRMWARE_INCLUDE_NANO=n/CONFIG_FIRMWARE_INCLUDE_NANO=y/g' .config
-          sed -i "s/CONFIG_FIRMWARE_INCLUDE_MTR=n/CONFIG_FIRMWARE_INCLUDE_MTR=y/g' .config
-          sed -i "s/CONFIG_FIRMWARE_INCLUDE_SOCAT=n/CONFIG_FIRMWARE_INCLUDE_SOCAT=y/g' .config
+          sed -i 's/CONFIG_FIRMWARE_INCLUDE_SFE=y/CONFIG_FIRMWARE_INCLUDE_SFE=n/g' .config
+          sed -i 's/CONFIG_FIRMWARE_INCLUDE_LPRD=y/CONFIG_FIRMWARE_INCLUDE_LPRD=n/g' .config
+          sed -i 's/CONFIG_FIRMWARE_INCLUDE_U2EC=y/CONFIG_FIRMWARE_INCLUDE_U2EC=n/g' .config
+          sed -i 's/CONFIG_FIRMWARE_INCLUDE_OPENVPN=y/CONFIG_FIRMWARE_INCLUDE_OPENVPN=n/g' .config
+          sed -i 's/CONFIG_FIRMWARE_INCLUDE_FFMPEG_NEW=y/CONFIG_FIRMWARE_INCLUDE_FFMPEG_NEW=n/g' .config
+          sed -i 's/CONFIG_FIRMWARE_INCLUDE_DOGCOM=y/CONFIG_FIRMWARE_INCLUDE_DOGCOM=n/g' .config
+          sed -i 's/CONFIG_FIRMWARE_INCLUDE_NANO=n/CONFIG_FIRMWARE_INCLUDE_NANO=y/g' .config
+          sed -i 's/CONFIG_FIRMWARE_INCLUDE_MTR=n/CONFIG_FIRMWARE_INCLUDE_MTR=y/g' .config
+          sed -i 's/CONFIG_FIRMWARE_INCLUDE_SOCAT=n/CONFIG_FIRMWARE_INCLUDE_SOCAT=y/g' .config
       - name: Start build firmware
         run: |
           make ${{ matrix.target }} TOOLCHAIN=${{ matrix.toolchain }}
